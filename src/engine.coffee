@@ -209,7 +209,9 @@ class engine
       view_options = @_generateViewOptions filename
       v = new view txt, view_options
       @viewCache[filename] = v
-      @_monitorForChanges filename, options
+      # SUPER UGLY HACK, DO NOT PR / MERGE
+      # see: https://github.com/malgorithms/toffee/issues/26
+      #@_monitorForChanges filename, options
       return v
 
   _reloadFileInBkg: (filename, options) ->
